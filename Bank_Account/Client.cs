@@ -43,6 +43,13 @@ namespace Bank_Account
 
         //methods
 
+        public void GetInfo()
+        {
+            Console.WriteLine(name);
+            Console.WriteLine(username);
+            Console.WriteLine(usernumber);
+        }
+
 
 
 

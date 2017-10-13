@@ -33,7 +33,7 @@ namespace Bank_Account
                 switch (userChoice)
                 {
                     case 1:
-                        //method for user info
+                        user.GetInfo();
                         break;
                     case 2:
                         Console.WriteLine("View account information for");
@@ -94,7 +94,7 @@ namespace Bank_Account
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("You suck");
+                        Console.WriteLine("Please enter valid option.");
                         break;
                 }
 
@@ -107,6 +107,10 @@ namespace Bank_Account
                 Console.WriteLine("5. Exit");
 
                 userChoice = int.Parse(Console.ReadLine());
+                if (userChoice == 5)
+                {
+                    Console.WriteLine("Thank you.");
+                }
             }
             while (userChoice < 5);
 
