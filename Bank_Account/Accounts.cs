@@ -22,18 +22,16 @@ namespace Bank_Account
         //methods
         public abstract void ViewBalance();
 
-        public virtual double Deposit() //I don't think these need to be in existence.
+        public virtual double Deposit(double userDeposit) 
         {
-            Console.WriteLine("How much would you like to deposit?");
-            double userDeposit = double.Parse(Console.ReadLine());
-            return userDeposit;
+            accountBalance += userDeposit;
+            return accountBalance;
         }
 
-        public virtual double Withdraw()
+        public virtual double Withdraw(double userWithdraw)
         {
-            Console.WriteLine("How much would you like to withdraw?");
-            double userWithdraw = double.Parse(Console.ReadLine());
-            return userWithdraw;
+            accountBalance -= userWithdraw;            
+            return accountBalance;
         }
 
 

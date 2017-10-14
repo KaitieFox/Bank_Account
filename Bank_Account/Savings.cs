@@ -9,7 +9,7 @@ namespace Bank_Account
     class Savings : Accounts
     {
         //field
-        private double minimum = 0.00;
+        private double minimum = 100.00;
 
         //property
         public double Minimum
@@ -32,23 +32,22 @@ namespace Bank_Account
         //methods
         public override void ViewBalance()
         {
-            Console.WriteLine("You savings balance is $" + accountBalance);
+            Console.WriteLine("Your savings balance is $" + accountBalance);
         }
+                
 
-        public override double Deposit()
-        {
-            Console.WriteLine("How much would you like to deposit?");
-            double userDeposit = double.Parse(Console.ReadLine());
-            accountBalance += userDeposit;
-            return accountBalance;
-        }
-
-        public override double Withdraw()
-        {
-            Console.WriteLine("How much would you like to withdraw?");
-            double userWithdraw = double.Parse(Console.ReadLine());
-            accountBalance += userWithdraw;
-            return accountBalance;
+        public override double Withdraw(double userWithdraw)
+        {                        
+            if ((accountBalance - userWithdraw) < minimum)
+            {
+                Console.WriteLine("Insufficient funds to complete withdraw.");
+                return accountBalance;             
+            }
+            else
+            {
+                base.Withdraw(userWithdraw);
+                return accountBalance;
+            }
         }
 
     }

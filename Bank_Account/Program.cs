@@ -19,34 +19,49 @@ namespace Bank_Account
             Checking userChecking = new Checking(1000.00);
             Savings userSavings = new Savings(10000.00);
 
-            Console.WriteLine("Figure out what cha wanna do.");
+            Console.WriteLine("MAIN MENU");
             Console.WriteLine("1. View Client Information");
             Console.WriteLine("2. View Account Balance");
             Console.WriteLine("3. Deposit Funds");
             Console.WriteLine("4. Withdraw Funds");
             Console.WriteLine("5. Exit");
-
+            
             userChoice = int.Parse(Console.ReadLine());
+            Console.WriteLine();
             //run userchoice loop.
             do
             {
                 switch (userChoice)
                 {
-                    case 1:
+                    case 1: //Client info
                         user.GetInfo();
+                        Console.WriteLine();
                         break;
                     case 2:
                         Console.WriteLine("View account information for");
                         Console.WriteLine("1. Checking");
-                        Console.WriteLine("2. Savings");
+                        Console.WriteLine("2. Savings");                        
                         userChoice = int.Parse(Console.ReadLine());
-                        if (userChoice == 1)
+                        Console.WriteLine();
+                        if (userChoice == 1) //Checking, Accounts base method
                         {
                             userChecking.ViewBalance();
+                            Console.WriteLine();
                         }
-                        else if (userChoice == 2)
+                        else if (userChoice == 2) //Savings, Accounts base method
                         {
                             userSavings.ViewBalance();
+                            Console.WriteLine();
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("Thank you");
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please enter a valid option");
+                            Console.WriteLine();
                         }
                         break;
                     case 3:
@@ -54,19 +69,32 @@ namespace Bank_Account
                         Console.WriteLine("1. Checking");
                         Console.WriteLine("2. Savings");
                         userChoice = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
                         if (userChoice == 1)
                         {
-                            userChecking.Deposit();
+                            Console.WriteLine("How much would you like to deposit?");
+                            double userDeposit = double.Parse(Console.ReadLine());
+                            userChecking.Deposit(userDeposit);
                             userChecking.ViewBalance();
+                            Console.WriteLine();
                         }
                         else if (userChoice == 2)
                         {
-                            userSavings.Deposit();
+                            Console.WriteLine("How much would you like to deposit?");
+                            double userDeposit = double.Parse(Console.ReadLine());
+                            userSavings.Deposit(userDeposit);
                             userSavings.ViewBalance();
+                            Console.WriteLine();
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("Thank you");
+                            Environment.Exit(0);
                         }
                         else
                         {
                             Console.WriteLine("Please enter a valid option");
+                            Console.WriteLine();
                         }
                         break;
                     case 4:
@@ -74,19 +102,33 @@ namespace Bank_Account
                         Console.WriteLine("1. Checking");
                         Console.WriteLine("2. Savings");
                         userChoice = int.Parse(Console.ReadLine());
+                        Console.WriteLine();
+
                         if (userChoice == 1)
                         {
-                            userChecking.Withdraw();
+                            Console.WriteLine("How much would you like to withdraw?");
+                            double userWithdraw = double.Parse(Console.ReadLine());
+                            userChecking.Deposit(userWithdraw);  //Checking, Accounts base method
                             userChecking.ViewBalance();
+                            Console.WriteLine();
                         }
                         else if (userChoice == 2)
                         {
-                            userSavings.Withdraw();
+                            Console.WriteLine("How much would you like to withdraw?");
+                            double userWithdraw = double.Parse(Console.ReadLine());
+                            userSavings.Withdraw(userWithdraw);  //Savings override, Accounts base method
                             userSavings.ViewBalance();
+                            Console.WriteLine();
+                        }
+                        else if (userChoice == 5)
+                        {
+                            Console.WriteLine("Thank you");
+                            Environment.Exit(0);
                         }
                         else
                         {
                             Console.WriteLine("Please enter a valid option");
+                            Console.WriteLine();
                         }
                         break;
                     case 5:
@@ -105,6 +147,7 @@ namespace Bank_Account
                 Console.WriteLine("3. Deposit Funds");
                 Console.WriteLine("4. Withdraw Funds");
                 Console.WriteLine("5. Exit");
+                Console.WriteLine();
 
                 userChoice = int.Parse(Console.ReadLine());
                 if (userChoice == 5)
