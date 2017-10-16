@@ -49,14 +49,6 @@ namespace Bank_Account
             Console.WriteLine(username);
             Console.WriteLine(usernumber);
         }
-
-
-
-
-
-
-
-
-
+        
     }
 }

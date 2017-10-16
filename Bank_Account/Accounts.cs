@@ -12,13 +12,7 @@ namespace Bank_Account
         protected int accountNumber;
         protected double accountBalance;
         protected string accountType;
-
-
-
-
-
-
-
+        
         //methods
         public abstract void ViewBalance();
 
@@ -33,8 +27,6 @@ namespace Bank_Account
             accountBalance -= userWithdraw;            
             return accountBalance;
         }
-
-
-
+        
     }
 }

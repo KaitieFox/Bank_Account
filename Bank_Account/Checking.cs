@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace Bank_Account
 {
     class Checking : Accounts
-    {
-        
+    {     
 
         //constructor
         public Checking()
@@ -21,9 +20,6 @@ namespace Bank_Account
             this.accountType = "checking";
             this.accountBalance = accountBalance;
         }
-
-
-
 
         //methods
         public override void ViewBalance()
