@@ -13,7 +13,7 @@ namespace Bank_Account
 
             int userChoice = 0;
 
-
+            //hardcoded user info
             Client user = new Client("Moses Gilford", "mosesgilford", 100001);
 
             Checking userChecking = new Checking(1000.00);
@@ -74,7 +74,7 @@ namespace Bank_Account
                         {
                             Console.WriteLine("How much would you like to deposit?");
                             double userDeposit = double.Parse(Console.ReadLine());
-                            userChecking.Deposit(userDeposit);
+                            userChecking.Deposit(userDeposit); //Checking, Accounts Deposit method
                             userChecking.ViewBalance();
                             Console.WriteLine();
                         }
@@ -82,7 +82,7 @@ namespace Bank_Account
                         {
                             Console.WriteLine("How much would you like to deposit?");
                             double userDeposit = double.Parse(Console.ReadLine());
-                            userSavings.Deposit(userDeposit);
+                            userSavings.Deposit(userDeposit); //Savings, Acounts Deposit method
                             userSavings.ViewBalance();
                             Console.WriteLine();
                         }
