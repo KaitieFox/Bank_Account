@@ -108,7 +108,7 @@ namespace Bank_Account
                         {
                             Console.WriteLine("How much would you like to withdraw?");
                             double userWithdraw = double.Parse(Console.ReadLine());
-                            userChecking.Deposit(userWithdraw);  //Checking, Accounts base method
+                            userChecking.Withdraw(userWithdraw);  //Checking, Accounts base method
                             userChecking.ViewBalance();
                             Console.WriteLine();
                         }
